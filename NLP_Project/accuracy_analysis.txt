@@ -1,0 +1,48 @@
+Classification Report:
+The classification report provides the following key metrics for each class (Negative, Neutral, Positive):
+
+#Precision: Measures the accuracy of positive predictions (how many selected items are relevant).
+Negative Precision: 0.71 – 71% of the instances predicted as Negative were actually Negative.
+Neutral Precision: 0.43 – 43% of the instances predicted as Neutral were actually Neutral.
+Positive Precision: 0.74 – 74% of the instances predicted as Positive were actually Positive.
+
+#Recall: Measures the ability of the model to correctly identify all relevant instances (how many actual positives were captured).
+Negative Recall: 0.82 – 82% of the actual Negative instances were correctly identified as Negative.
+Neutral Recall: 0.21 – Only 21% of the actual Neutral instances were correctly identified as Neutral.
+Positive Recall: 0.80 – 80% of the actual Positive instances were correctly identified as Positive.
+
+#F1-Score: The harmonic mean of precision and recall. A higher F1-score indicates better balance between precision and recall.
+Negative F1-Score: 0.76
+Neutral F1-Score: 0.28 (very low, indicating poor performance on the Neutral class)
+Positive F1-Score: 0.77
+Support: The number of true instances for each class.
+
+There are 2501 Negative, 1217 Neutral, and 2532 Positive samples in the test set.
+Accuracy: The proportion of correct predictions across all classes.
+
+Overall Accuracy: 0.70 – our model correctly predicts 70% of the instances across all classes.
+
+#Macro Average: The average precision, recall, and F1-score across all classes, treating all classes equally.
+Macro avg Precision: 0.63
+Macro avg Recall: 0.61
+Macro avg F1-Score: 0.61
+
+#Weighted Average: The average of metrics weighted by the support (the number of instances per class).
+Weighted avg Precision: 0.67
+Weighted avg Recall: 0.70
+Weighted avg F1-Score: 0.67
+
+----------------------
+Confusion Matrix:
+This matrix shows the performance of your model in terms of how many instances it classified correctly or misclassified for each class.
+
+Negative	Neutral	Positive
+Negative	2057	182	262
+Neutral	517	260	440
+Positive	338	166	2028
+
+Diagonal elements (2057, 260, 2028) represent correct predictions for each class.
+Off-diagonal elements represent misclassifications:
+Negative misclassified as Neutral: 182 instances
+Neutral misclassified as Negative: 517 instances
+Positive misclassified as Neutral: 166 instances
