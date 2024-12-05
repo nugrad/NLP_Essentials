@@ -1,0 +1,30 @@
+Contextual embeddings, like BERT (Bidirectional Encoder Representations from Transformers), are powerful representations that capture not only word meaning but also context within a sentence. Unlike static embeddings (e.g., Word2Vec or GloVe), BERT generates embeddings that are dynamically adjusted based on the surrounding context of each word.
+
+How Context is Captured:
+CBOW (Continuous Bag of Words):
+Predicts the target word based on the surrounding words within a fixed "context window."
+Example: For the sentence "The cat sat on the mat," if the window size is 2, the model might predict "sat" using the words ["The", "cat", "on", "the"].
+Skip-Gram:
+Predicts the surrounding words (context) given a target word.
+Example: For the target word "sat," the model predicts ["The", "cat", "on", "the"].
+
+BERT (Bidirectional Encoder Representations from Transformers)
+How Context is Captured:
+Dynamic Embeddings:
+
+Each word’s embedding changes based on the sentence it appears in.
+Example:
+In "river bank," the embedding for "bank" will differ from its embedding in "money bank."
+Bidirectional Context:
+
+BERT considers the entire sentence (both left and right context) when generating embeddings.
+This is unlike Word2Vec, which uses a fixed window size, and GloVe, which uses co-occurrence but not sequence.
+Deep Learning Architecture:
+
+BERT uses a transformer architecture with self-attention mechanisms to model relationships between all words in a sentence simultaneously.
+Self-attention assigns weights to each word based on its importance in understanding the current word.
+Key Features:
+Sentence-Level Understanding:
+BERT doesn't just embed individual words but also provides a [CLS] token embedding representing the entire sentence.
+Handles Polysemy:
+It can differentiate between meanings of words like "bank" depending on their context.

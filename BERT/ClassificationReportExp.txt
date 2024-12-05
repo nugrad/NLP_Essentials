@@ -1,0 +1,115 @@
+A classification report is an important evaluation metric in machine learning, especially for classification tasks. It provides several metrics to help you understand the performance of your model in more detail, especially when the dataset is imbalanced (i.e., when some classes are overrepresented while others are underrepresented). Let’s break down each part of the classification report:
+
+1. Precision:
+Definition: Precision is the ratio of true positive predictions to the total number of positive predictions made by the model. It tells you how many of the predicted positive instances are actually positive.
+
+Formula:
+
+Precision
+=
+True Positives
+True Positives
++
+False Positives
+Precision= 
+True Positives+False Positives
+True Positives
+​
+ 
+Interpretation: In your report:
+
+For Negative class: Precision = 0.92, which means that when the model predicts a text as "Negative", 92% of the time it is correct.
+For Positive class: Precision = 0.81, meaning that when the model predicts a text as "Positive", 81% of the time it is correct.
+
+2. Recall:
+Definition: Recall (also known as Sensitivity or True Positive Rate) is the ratio of true positive predictions to the total number of actual positive instances in the data. It tells you how many of the actual positive instances the model correctly identified.
+
+Formula:
+
+Recall
+=
+True Positives
+True Positives
++
+False Negatives
+Recall= 
+True Positives+False Negatives
+True Positives
+​
+ 
+Interpretation:
+
+For Negative class: Recall = 0.78, meaning that 78% of the actual "Negative" texts were correctly identified by the model.
+For Positive class: Recall = 0.94, meaning that 94% of the actual "Positive" texts were correctly identified.
+3. F1-Score:
+Definition: The F1-score is the harmonic mean of precision and recall. It is a more balanced measure that takes both precision and recall into account. It is especially useful when the dataset is imbalanced.
+
+Formula:
+
+F1-score
+=
+2
+×
+Precision
+×
+Recall
+Precision
++
+Recall
+F1-score=2× 
+Precision+Recall
+Precision×Recall
+​
+ 
+Interpretation:
+
+For Negative class: F1-score = 0.85, indicating a good balance between precision and recall for the negative class.
+For Positive class: F1-score = 0.87, indicating a good balance between precision and recall for the positive class.
+4. Support:
+Definition: Support is the number of true instances for each class in the dataset. It tells you how many actual samples of each class are present.
+
+Interpretation:
+
+For Negative class: Support = 12,500, meaning there are 12,500 actual "Negative" samples in the dataset.
+For Positive class: Support = 12,500, meaning there are 12,500 actual "Positive" samples in the dataset.
+5. Accuracy:
+Definition: Accuracy is the proportion of correct predictions (both positive and negative) to the total number of predictions.
+
+Formula:
+
+Accuracy
+=
+True Positives + True Negatives
+Total Predictions
+Accuracy= 
+Total Predictions
+True Positives + True Negatives
+​
+ 
+Interpretation: The model’s overall accuracy is 0.86, meaning 86% of the model's predictions (for both Positive and Negative classes) are correct.
+
+6. Macro Average:
+Definition: The macro average is the unweighted mean of precision, recall, and F1-score for all classes. This gives equal importance to each class regardless of their support (i.e., the number of samples).
+
+Interpretation: In this case, macro average:
+
+Precision = 0.87
+Recall = 0.86
+F1-score = 0.86
+This indicates that, on average, the model performs similarly across both classes, without being biased toward one of them.
+
+7. Weighted Average:
+Definition: The weighted average takes the support (number of samples in each class) into account and gives more weight to the classes with larger support.
+
+Interpretation: In this case, weighted average:
+
+Precision = 0.87
+Recall = 0.86
+F1-score = 0.86
+This means that the model's performance is similarly balanced between the two classes, but the weighted average accounts for the fact that the number of samples for each class might affect the overall metric.
+
+Summary of your report:
+Your model is performing fairly well overall, with good F1-scores and accuracy for both classes.
+For the Negative class, precision is high (92%) but recall is a bit lower (78%), meaning the model might miss some negative samples.
+For the Positive class, recall is excellent (94%), but precision is a bit lower (81%), meaning the model may classify some non-positive samples as positive.
+The F1-scores are balanced, indicating a good trade-off between precision and recall.
